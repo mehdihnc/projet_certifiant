@@ -4,10 +4,12 @@ import config from 'config'
 import { UserDocument } from '../interfaces/interface.user'
 
 const userSchema = new mongoose.Schema ({
+    avatar:{type: String, required:true,unique: true},
     email: {type: String, required:true,unique: true},
-    name: {type: String, required:true},
     surname: {type: String, required:true},
     password: {type: String, required:true},
+    createdAT: { type: Date, default: Date.now },
+    updateAT: { type: Date, default: Date.now },
 },{timestamps: true})
 
 
